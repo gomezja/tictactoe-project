@@ -19,7 +19,34 @@ Clears screen between board updates.
 def clear_output():
     print("\n" * 100)
 
+"""
+Displays the current game board.
+
+:param board: A list with all the current markers on the board.
+"""
+def display_board(board):
+    clear_output()
+
+    print("    |   |    ")
+    print("  " + board[7] + " | " + board[8] + " | " + board[9] + "  ")
+    print("    |   |    ")
+    print("-------------")
+    print("    |   |    ")
+    print("  " + board[4] + " | " + board[5] + " | " + board[6] + "  ")
+    print("    |   |    ")
+    print("-------------")
+    print("    |   |    ")
+    print("  " + board[1] + " | " + board[2] + " | " + board[3] + "  ")
+    print("    |   |    ")
+
+    print("\nPlayer 1: {}, Player 2: {}".format(player1_mark, player2_mark))
+
 print("Welcome to Tic Tac Toe!\n")
 
+# set player markers
 player1_mark, player2_mark = player_input()
-print("\nPlayer 1: {}, Player 2: {}".format(player1_mark, player2_mark))
+
+# create initial board
+board = [' '] * 10
+
+display_board(board)
